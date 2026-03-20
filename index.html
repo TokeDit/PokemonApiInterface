@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
 </head>
+
 <body>
-  <h1>Pokemon api interface testing</h1>
+    <h1>Pokemon api interface testing</h1>
 
-    <div id="app">
-
-        <ol v-if="pokemons.length > 0">
-            <li v-for="pokemon in pokemons">
-                Pokemon name: = {{pokemon.name}}
-            </li>
-        </ol>
-
-    </div>
-
+  <div id="app">
+    <ol v-if="pokemons.length > 0">
+        <li v-for="pokemon in pokemons" :key="pokemon.name">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" :src="pokemon.image" :alt="pokemon.name">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pokemon.name }}</h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+    
     <script src="index.js"></script>
 </body>
+
 </html>
